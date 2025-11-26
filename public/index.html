@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIIOC - Ciberseguridad Inteligente</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img/Logo_App.png">
+    <script>
+        // Redirigir a la página de carga si no se ha cargado antes
+        if (!sessionStorage.getItem('hasLoaded')) {
+            sessionStorage.setItem('hasLoaded', 'true');
+            window.location.href = 'loading.html';
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="img/Logo.png" alt="AIIOC Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="pages/que-es.html">¿Qué es AIIOC?</a>
+                <a href="pages/api.html">API</a>
+                <a href="pages/descarga.html">Descarga</a>
+                <a href="pages/nosotros.html">Nosotros</a>
+                <a href="pages/contacto.html">Contacto</a>
+            </nav>
+            <div class="login-btn">
+                <a href="pages/login.html" class="btn-login" style="background: #ffd700; color: #0f0f0f; padding: 0.8rem 2.5rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; min-width: 150px; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); transition: all 0.3s ease; text-decoration: none;">Iniciar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Botón Volver Arriba -->
+    <button class="back-to-top" aria-label="Volver al inicio">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Automatiza la gestión de IOCs con inteligencia artificial y n8n</h1>
+            <p class="eslogan">Centraliza. Automatiza. Prioriza.</p>
+            <div class="hero-buttons">
+                <a href="pages/descarga.html" class="btn-primary pricing" style="padding: 1rem 3rem; border-radius: 50px; background: var(--primary-color); color: var(--text-dark); box-shadow: var(--shadow-glow); border: none;">
+                    <span style="font-weight: bold;">Descargar Demo</span>
+                </a>
+                <a href="#" class="btn-secondary pricing" style="padding: 1rem 3rem; border-radius: 50px; background: var(--primary-color); color: var(--text-dark); box-shadow: var(--shadow-glow); border: none;">
+                    <span style="font-weight: bold;">Ver Video</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Características Principales -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-robot"></i>
+                <h3>Inteligencia Artificial</h3>
+                <p>Algoritmos avanzados para análisis y priorización automática de amenazas</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>Integración Completa</h3>
+                <p>Compatibilidad con n8n y principales herramientas de ciberseguridad</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Seguridad Primero</h3>
+                <p>Arquitectura segura y encriptación de datos</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Análisis en Tiempo Real</h3>
+                <p>Detección y respuesta instantánea a nuevas amenazas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="statistics">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h2>100+</h2>
+                <p>Fuentes de datos integradas</p>
+            </div>
+            <div class="stat-card">
+                <h2>99.9%</h2>
+                <p>Tiempo de disponibilidad</p>
+            </div>
+            <div class="stat-card">
+                <h2>100ms</h2>
+                <p>Latencia promedio</p>
+            </div>
+            <div class="stat-card">
+                <h2>1M+</h2>
+                <p>IOCs procesados mensualmente</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="benefits">
+        <h2>¿Por qué elegir AIIOC?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Precisión en la Detección</h3>
+                <p>Algoritmos de machine learning para minimizar falsos positivos</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-clock"></i>
+                <h3>Respuesta Rápida</h3>
+                <p>Automatización completa para una respuesta inmediata a amenazas</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Escalabilidad</h3>
+                <p>Infraestructura preparada para crecer con tu organización</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-users"></i>
+                <h3>Soporte 24/7</h3>
+                <p>Asistencia técnica especializada disponible todo el tiempo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials">
+        <h2>Lo que dicen nuestros usuarios</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"AIIOC ha revolucionado nuestra gestión de amenazas. La automatización con n8n ha sido un juego de niños"</p>
+                    <div class="testimonial-author">
+                        <h4>John Doe</h4>
+                        <p>CISO, Empresa Tecnológica</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"La precisión en la detección de amenazas es impresionante. Hemos reducido significativamente el tiempo de respuesta"</p>
+                    <div class="testimonial-author">
+                        <h4>Jane Smith</h4>
+                        <p>Analista de Seguridad, MSSP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta">
+        <h2>¿Listo para mejorar tu seguridad?</h2>
+        <p>Comienza hoy mismo con AIIOC y automatiza tu gestión de amenazas</p>
+        <div class="cta-buttons">
+            <a href="pages/descarga.html" class="btn-primary pricing" style="padding: 1rem 3rem; border-radius: 50px; background: var(--primary-color); color: var(--text-dark); box-shadow: var(--shadow-glow); border: none;">
+                <span style="font-weight: bold;">Comenzar Ahora</span>
+            </a>
+            <a href="pages/contacto.html" class="btn-secondary pricing" style="padding: 1rem 3rem; border-radius: 50px; background: var(--primary-color); color: var(--text-dark); box-shadow: var(--shadow-glow); border: none;">
+                <span style="font-weight: bold;">Contactar</span>
+            </a>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AIIOC</h3>
+                <p>Sistema de gestión de IOCs con inteligencia artificial</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="pages/que-es.html">¿Qué es AIIOC?</a></li>
+                    <li><a href="pages/api.html">API</a></li>
+                    <li><a href="pages/descarga.html">Descarga</a></li>
+                    <li><a href="pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="pages/aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="pages/politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="pages/politica-cookies.html">Política de Cookies</a></li>
+                    <li><a href="pages/terminos-servicio.html">Términos de Servicio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="pages/trabaja-con-nosotros.html">Trabaja con Nosotros</a></li>
+                    <li><a href="pages/afiliados.html">Programa de Afiliados</a></li>
+                    <li><a href="pages/prensa.html">Prensa</a></li>
+                    <li><a href="pages/investigadores.html">Programa de Investigadores</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> aalexc.05@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +34 692 98 75 58   </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Barcelona, España</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AIIOC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

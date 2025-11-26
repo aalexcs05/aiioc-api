@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarga - AIIOC</title>
+    <link rel="icon" type="image/x-icon" href="../img/Logo_App.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="../img/Logo.png" alt="AIIOC Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="../pages/que-es.html">¿Qué es AIIOC?</a>
+                <a href="../pages/api.html">API</a>
+                <a href="../pages/descarga.html">Descarga</a>
+                <a href="../pages/nosotros.html">Nosotros</a>
+                <a href="../pages/contacto.html">Contacto</a>
+            </nav>
+            <div class="login-btn">
+                <a href="../pages/login.html" class="btn-login" style="background: #ffd700; color: #0f0f0f; padding: 0.8rem 2.5rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; min-width: 150px; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); transition: all 0.3s ease; text-decoration: none;">Iniciar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Botón Volver Arriba -->
+    <button class="back-to-top" aria-label="Volver al inicio">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Descarga AIIOC</h1>
+            <p class="eslogan">Obtén la demo gratuita</p>
+        </div>
+    </section>
+
+    <!-- Descarga Section -->
+    <section class="descarga">
+        <div class="container">
+            <h2>Descarga AIIOC</h2>
+            <div class="download-options">
+                <div class="download-option">
+                    <i class="fas fa-download"></i>
+                    <h3>Versión Demo</h3>
+                    <p>Prueba AIIOC sin compromiso</p>
+                    <button class="btn-primary" onclick="scrollToPlans()">Ver Precios</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios Section -->
+    <section class="pricing">
+        <div class="pricing-container">
+            <h2>Planes y Precios</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="popular-tag">Gratuito</div>
+                    <div class="plan-header">
+                        <h3>Gratuito</h3>
+                        <div class="price">
+                            <sup>$</sup>0<sub>/mes</sub>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>500 Peticiones API<br>/ día</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>25 Resultados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Restraso de 48-72 horas<br>Acceso a Datos</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Risk Score<br>Simplificado</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fuentes/Tags<br>Limitados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Soporte<br>Comunitario</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Endpoints Avanzados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Integración Webhooks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-times-circle"></i>
+                            <span>SLA de Disponibilidad</span>
+                        </div>
+                    </div>
+                    <a href="../pages/dashboard.html" class="btn-primary" style="display: inline-block; text-decoration: none; text-align: center;">Empezar</a>
+                </div>
+                <div class="plan-card popular">
+                    <div class="popular-tag">Más Popular</div>
+                    <div class="plan-header">
+                        <h3>Empresarial</h3>
+                        <div class="price">
+                            <sup>$</sup>49<sub>/mes</sub>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>10.000 Peticiones API / día</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>1.000 Resultados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tiempo Real</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Risk Score Numérico (0-100)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fuentes/Tags Completo</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Soporte Email</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Endpoints Avanzados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Integración Webhooks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-times-circle"></i>
+                            <span>SLA de Disponibilidad</span>
+                        </div>
+                    </div>
+                    <a href="../pages/dashboard.html" class="btn-primary" style="display: inline-block; text-decoration: none; text-align: center;">Empezar</a>
+                </div>
+                <div class="plan-card">
+                    <div class="popular-tag">Premium</div>
+                    <div class="plan-header">
+                        <h3>Premium</h3>
+                        <div class="price">
+                            <sup>$</sup>99<sub>/mes</sub>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Peticiones API / día<br>Personalizado / Ilimitado</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Resultados Ilimitado</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tiempo Real</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Risk Score Numérico (0-100)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fuentes/Tags Completo<br>+ Enriquecimiento</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Soporte Prioritario<br>+ Gestor de Cuenta</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Endpoints Avanzados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Integración Webhooks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>SLA de Disponibilidad</span>
+                        </div>
+                    </div>
+                    <a href="../pages/dashboard.html" class="btn-primary" style="display: inline-block; text-decoration: none; text-align: center;">Empezar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AIIOC</h3>
+                <p>Sistema de gestión de IOCs con inteligencia artificial</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="pages/que-es.html">¿Qué es AIIOC?</a></li>
+                    <li><a href="pages/api.html">API</a></li>
+                    <li><a href="pages/descarga.html">Descarga</a></li>
+                    <li><a href="pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="pages/aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="pages/politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="pages/politica-cookies.html">Política de Cookies</a></li>
+                    <li><a href="pages/terminos-servicio.html">Términos de Servicio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="pages/trabaja-con-nosotros.html">Trabaja con Nosotros</a></li>
+                    <li><a href="pages/afiliados.html">Programa de Afiliados</a></li>
+                    <li><a href="pages/prensa.html">Prensa</a></li>
+                    <li><a href="pages/investigadores.html">Programa de Investigadores</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> aalexc.05@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +34 692 98 75 58   </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Barcelona, España</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AIIOC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

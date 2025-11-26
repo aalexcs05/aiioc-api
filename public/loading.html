@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIIOC - Loading</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0F0F0F;
+            overflow: hidden;
+        }
+
+        .loading-container {
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .letter {
+            font-size: 80px;
+            color: transparent;
+            text-shadow: 0 0 10px #FFD700;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .letter.active {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <span class="letter">A</span>
+        <span class="letter">I</span>
+        <span class="letter">I</span>
+        <span class="letter">O</span>
+        <span class="letter">C</span>
+    </div>
+    <script>
+        // Función para activar una letra
+        function activateLetter(index) {
+            const letters = document.querySelectorAll('.letter');
+            letters[index].classList.add('active');
+        }
+
+        // Función para iniciar la animación
+        function startAnimation() {
+            const letters = document.querySelectorAll('.letter');
+            let currentLetter = 0;
+
+            // Función recursiva para activar las letras
+            function activateNextLetter() {
+                if (currentLetter < letters.length) {
+                    activateLetter(currentLetter);
+                    currentLetter++;
+                    setTimeout(activateNextLetter, 300); // 300ms entre cada letra
+                } else {
+                    // Cuando termina la animación, redirigir a la página principal
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000); // Esperar 1 segundo después de la última letra
+                }
+            }
+
+            // Iniciar la animación
+            activateNextLetter();
+        }
+
+        // Iniciar la animación cuando se cargue la página
+        window.addEventListener('load', startAnimation);
+    </script>
+</body>
+</html>

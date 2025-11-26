@@ -1,0 +1,56 @@
+services:
+  # Servicio para tu API Node.js/Fastify
+  api:
+    build: . # Construye la imagen desde el Dockerfile en el directorio actual
+    container_name: aiioc_api_service
+    ports:
+      - "3000:3000" # Mapea puerto_host:puerto_contenedor
+    volumes:
+      # Monta el código fuente para desarrollo en caliente con nodemon
+      - .:/usr/src/app 
+      # Evita que node_modules del host sobreescriba el del contenedor
+      - /usr/src/app/node_modules 
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongo_db:27017/aiioc_database # URI para la API
+      - PORT=3000 # El puerto en el que escucha tu API dentro del contenedor
+    depends_on:
+      - mongo_db # La API espera a que mongo_db se inicie
+    networks:
+      - aiioc_network
+
+  # Servicio para MongoDB
+  mongo_db:
+    image: mongo:7.0 # Recomiendo especificar una versión major, ej. mongo:6.0 o mongo:7.0
+    container_name: aiioc_mongo_db_service
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_aiioc_data:/data/db # Usa/Crea el volumen nombrado mongo_aiioc_data
+    restart: unless-stopped # Reinicia el contenedor si se detiene, a menos que lo detengas tú
+    networks:
+      - aiioc_network
+
+  # Servicio para n8n
+  n8n:
+    image: n8nio/n8n:latest # Puedes especificar una versión, ej. n8nio/n8n:1.20.0
+    container_name: aiioc_n8n_service
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n_aiioc_data:/home/node/.n8n # Usa/Crea el volumen nombrado n8n_aiioc_data
+    environment:
+      - GENERIC_TIMEZONE=Europe/Madrid # Ajusta a tu zona horaria
+    restart: unless-stopped
+    networks:
+      - aiioc_network
+
+# Definición de volúmenes nombrados para persistencia de datos
+volumes:
+  mongo_aiioc_data: # Docker gestionará este volumen
+  n8n_aiioc_data:   # Docker gestionará este volumen
+
+# Definición de la red personalizada para que los servicios se comuniquen
+networks:
+  aiioc_network:
+    driver: bridge
