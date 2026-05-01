@@ -25,7 +25,7 @@ services:
     container_name: aiioc_mongo_db_service
     ports:
       - "27017:27017"
-    volumes:
+    volumes:  
       - mongo_aiioc_data:/data/db # Usa/Crea el volumen nombrado mongo_aiioc_data
     restart: unless-stopped # Reinicia el contenedor si se detiene, a menos que lo detengas tú
     networks:

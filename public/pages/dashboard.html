@@ -358,6 +358,18 @@
                 </div>
             </div>
 
+            <!-- Filtro de Rango de Puntuación -->
+            <div class="range-filter-box">
+                <div class="range-labels">
+                    <span>Rango de Puntuación:</span>
+                    <span id="rangeValueDisplay">0 - 100</span>
+                </div>
+                <div class="dual-range-slider">
+                    <input type="range" id="minRange" min="0" max="100" value="0">
+                    <input type="range" id="maxRange" min="0" max="100" value="100">
+                </div>
+            </div>
+
             <!-- Loading State -->
             <div id="loadingState" class="loading" style="display: none;">
                 <i class="fas fa-spinner"></i>
@@ -636,31 +648,12 @@
 
         // Función de búsqueda
         function searchResults() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            // Obtener los valores del rango actual
+            const minVal = Math.min(minRange.value, maxRange.value);
+            const maxVal = Math.max(minRange.value, maxRange.value);
             
-            if (searchTerm === '') {
-                filteredResults = allResults;
-            } else {
-                filteredResults = allResults.filter(result => 
-                    result.ioc.toLowerCase().includes(searchTerm) ||
-                    result.type.toLowerCase().includes(searchTerm) ||
-                    result.source.toLowerCase().includes(searchTerm)
-                );
-            }
-
-            totalPages = Math.ceil(filteredResults.length / ITEMS_PER_PAGE);
-            currentPage = 1;
-            displayResults();
-            displayPagination();
-            
-            if (filteredResults.length === 0) {
-                document.getElementById('resultsContainer').style.display = 'none';
-                document.getElementById('noResults').style.display = 'block';
-                document.getElementById('pagination').style.display = 'none';
-            } else {
-                document.getElementById('resultsContainer').style.display = 'block';
-                document.getElementById('noResults').style.display = 'none';
-            }
+            // Aplicar filtro combinado de búsqueda y rango
+            applyRangeFilter(minVal, maxVal);
         }
 
         // Función para ver detalles
@@ -763,6 +756,68 @@
         document.getElementById('searchInput').addEventListener('keyup', function(e) {
             if (e.key === 'Enter') {
                 searchResults();
+            }
+        });
+
+        // Funcionalidad del Filtro de Rango Doble
+        const minRange = document.getElementById('minRange');
+        const maxRange = document.getElementById('maxRange');
+        const rangeValueDisplay = document.getElementById('rangeValueDisplay');
+
+        function updateRangeDisplay() {
+            const minVal = Math.min(minRange.value, maxRange.value);
+            const maxVal = Math.max(minRange.value, maxRange.value);
+            rangeValueDisplay.textContent = `${minVal} - ${maxVal}`;
+            
+            // Aplicar filtro de rango
+            applyRangeFilter(minVal, maxVal);
+        }
+
+        function applyRangeFilter(minScore, maxScore) {
+            // Filtrar resultados basados en el rango de puntuación
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            let filtered = allResults.filter(item => {
+                const matchesSearch = searchTerm === '' || 
+                    item.ioc.toLowerCase().includes(searchTerm) ||
+                    item.type.toLowerCase().includes(searchTerm) ||
+                    item.source.toLowerCase().includes(searchTerm);
+                
+                const matchesRange = item.score >= minScore && item.score <= maxScore;
+                
+                return matchesSearch && matchesRange;
+            });
+
+            filteredResults = filtered;
+            totalPages = Math.ceil(filteredResults.length / ITEMS_PER_PAGE);
+            currentPage = 1;
+            displayResults();
+            displayPagination();
+            
+            if (filteredResults.length === 0) {
+                document.getElementById('resultsContainer').style.display = 'none';
+                document.getElementById('noResults').style.display = 'block';
+                document.getElementById('pagination').style.display = 'none';
+            } else {
+                document.getElementById('resultsContainer').style.display = 'block';
+                document.getElementById('noResults').style.display = 'none';
+            }
+        }
+
+        // Event listeners para los rangos
+        minRange.addEventListener('input', updateRangeDisplay);
+        maxRange.addEventListener('input', updateRangeDisplay);
+
+        // Prevenir que los rangos se crucen
+        minRange.addEventListener('input', function() {
+            if (parseInt(this.value) > parseInt(maxRange.value)) {
+                this.value = maxRange.value;
+            }
+        });
+
+        maxRange.addEventListener('input', function() {
+            if (parseInt(this.value) < parseInt(minRange.value)) {
+                this.value = minRange.value;
             }
         });
     </script>

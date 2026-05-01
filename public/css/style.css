@@ -1928,3 +1928,61 @@ section h2 {
         margin: 0 auto;
     }
 }
+
+/* Estilos para el Filtro de Rango Doble (Scoring) */
+.range-filter-box {
+    background: var(--bg-dark);
+    padding: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #333;
+    margin-top: 1rem;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.dual-range-slider {
+    position: relative;
+    height: 5px;
+    background: #333;
+    border-radius: 5px;
+}
+
+.dual-range-slider input[type="range"] {
+    position: absolute;
+    width: 100%;
+    top: -7px;
+    background: none;
+    pointer-events: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Estilo de las rueditas (thumbs) */
+.dual-range-slider input[type="range"]::-webkit-slider-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    pointer-events: auto;
+    appearance: none;
+    cursor: pointer;
+    border: 2px solid #0f0f0f;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.dual-range-slider input[type="range"]::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    pointer-events: auto;
+    cursor: pointer;
+    border: 2px solid #0f0f0f;
+}
